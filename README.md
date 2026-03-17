@@ -12,9 +12,14 @@ A Java 17 + JavaFX 21 desktop AI companion application with full chat UI, module
 Edit `aria/.env` (or copy from `.env.example`):
 
 ```
-ANTHROPIC_API_KEY=your_anthropic_key_here
-OPENAI_API_KEY=your_openai_key_here
-LLM_PROVIDER=claude
+  Get a free Groq key at: https://console.groq.com
+  Add it to .env:
+    GROQ_API_KEY=gsk_your_key_here
+    LLM_PROVIDER=groq
+
+  Optional paid providers:
+    ANTHROPIC_API_KEY=sk-ant-...   (claude.ai)
+    OPENAI_API_KEY=sk-...          (openai.com)
 ```
 
 At least one key is required. Claude is used by default with OpenAI as fallback.
@@ -22,8 +27,15 @@ At least one key is required. Claude is used by default with OpenAI as fallback.
 ### 3. Build
 
 ```bash
-cd aria
-mvn clean package -q
+--- SIMPLE COMMANDS (Windows) ---
+
+  Double-click  build.bat   — build ARIA
+  Double-click  run.bat     — start ARIA
+
+  Or from the aria folder in Command Prompt:
+    run       — start ARIA
+    build     — build ARIA
+
 ```
 
 ### 4. Run
@@ -44,6 +56,33 @@ java --module-path /path/to/javafx-sdk/lib --add-modules javafx.controls,javafx.
 - **World Context Editor** — Define ARIA's world, role, and knowledge
 - **Settings Panel** — API keys, model selection, theme, persistence
 - **AI Base Export** — Package any world context as a portable `.json` file for use in any LLM application
+
+### Rebuilding
+```bash
+  Start ARIA:
+    mvn javafx:run
+
+  Rebuild (after copying updated files from Replit):
+    mvn clean package -DskipTests
+
+  Rebuild + start in one go:
+    mvn clean package -DskipTests && mvn javafx:run
+
+
+--- WHEN TO REBUILD ---
+
+  Only rebuild when you copy updated .java files from Replit.
+  If you only change .env or config files, just restart normally.
+```
+
+### Key Files
+```bash
+  .env                        — API keys and settings
+  config/modules.json         — saved module on/off states
+  config/world_context.json   — world context data
+  prompts/aria_system_prompt.txt — ARIA's personality prompt (edit freely)
+  exports/                    — AI Base export files
+```
 
 ## Modules
 
