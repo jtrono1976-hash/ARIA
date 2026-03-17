@@ -27,15 +27,8 @@ At least one key is required. Claude is used by default with OpenAI as fallback.
 ### 3. Build
 
 ```bash
---- SIMPLE COMMANDS (Windows) ---
-
-  Double-click  build.bat   — build ARIA
-  Double-click  run.bat     — start ARIA
-
-  Or from the aria folder in Command Prompt:
-    run       — start ARIA
-    build     — build ARIA
-
+cd aria
+mvn clean package -q
 ```
 
 ### 4. Run
