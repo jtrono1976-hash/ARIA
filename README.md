@@ -11,7 +11,7 @@ A Java 17 + JavaFX 21 desktop AI companion application with full chat UI, module
 ### 2. Configure API Keys
 Edit `aria/.env` (or copy from `.env.example`):
 
-```
+```bash
   Get a free Groq key at: https://console.groq.com
   Add it to .env:
     GROQ_API_KEY=gsk_your_key_here
@@ -21,24 +21,34 @@ Edit `aria/.env` (or copy from `.env.example`):
     ANTHROPIC_API_KEY=sk-ant-...   (claude.ai)
     OPENAI_API_KEY=sk-...          (openai.com)
 ```
-
-At least one key is required. Claude is used by default with OpenAI as fallback.
+```
+At least one key is required. Go to settings to set it up.
+```
 
 ### 3. Build
 
 ```bash
-cd aria
-mvn clean package -q
+Double-click  build.bat   — build ARIA
+
+or
+
+Build:
+    mvn clean package -DskipTests
+
+Build + start in one go:
+    mvn clean package -DskipTests && mvn javafx:run
+    
 ```
 
 ### 4. Run
 
 ```bash
 # Via Maven plugin
-mvn javafx:run
+Double-click  run.bat     — start ARIA
 
-# Or via the built jar
-java --module-path /path/to/javafx-sdk/lib --add-modules javafx.controls,javafx.fxml -jar target/aria-companion-1.0.0.jar
+or
+
+mvn javafx:run
 ```
 
 ## Features
