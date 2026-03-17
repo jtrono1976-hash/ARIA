@@ -12,42 +12,44 @@ A Java 17 + JavaFX 21 desktop AI companion application with full chat UI, module
 Edit `aria/.env` (or copy from `.env.example`):
 
 ```bash
-  Get a free Groq key at: https://console.groq.com
-  Add it to .env:
+# Get a free Groq key at: https://console.groq.com
+# Add it to .env:
     GROQ_API_KEY=gsk_your_key_here
     LLM_PROVIDER=groq
 
-  Optional paid providers:
+# Optional paid providers:
+
     ANTHROPIC_API_KEY=sk-ant-...   (claude.ai)
     OPENAI_API_KEY=sk-...          (openai.com)
-```
-```
-At least one key is required. Go to settings to set it up.
+
+# Note: At least one key is required. Go to settings to set it up.
 ```
 
 ### 3. Build
 
 ```bash
-Double-click  build.bat   — build ARIA
+# Double-click
+build.bat to build ARIA
 
 or
 
-Build:
+# Build Command:
     mvn clean package -DskipTests
 
+# Start all in one:
 Build + start in one go:
     mvn clean package -DskipTests && mvn javafx:run
-    
 ```
 
 ### 4. Run
 
 ```bash
-# Via Maven plugin
-Double-click  run.bat     — start ARIA
+# Double-click
+run.bat to start ARIA
 
 or
 
+# Run Command:
 mvn javafx:run
 ```
 
@@ -62,19 +64,18 @@ mvn javafx:run
 
 ### Rebuilding
 ```bash
-  Start ARIA:
-    mvn javafx:run
-
-  Rebuild (after copying updated files from Replit):
+  # Rebuild (after updating the files):
     mvn clean package -DskipTests
-
-  Rebuild + start in one go:
+ 
+  # Rebuild + start in one go:
     mvn clean package -DskipTests && mvn javafx:run
 
+  # Start ARIA:
+    mvn javafx:run
 
---- WHEN TO REBUILD ---
+## WHEN TO REBUILD ##
 
-  Only rebuild when you copy updated .java files from Replit.
+  Only rebuild when you updated the .java files.
   If you only change .env or config files, just restart normally.
 ```
 
